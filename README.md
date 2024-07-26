@@ -1,6 +1,6 @@
 # Alliander Load Profile Estimation
 
-This project focuses on load profile estimation using various machine learning techniques.
+This project focuses on load profile estimation using conditional Variational Autoencoders (CVAE).
 
 ## Project Structure
 
@@ -13,12 +13,12 @@ This project focuses on load profile estimation using various machine learning t
 ## Setup
 
 1. Clone this repository:
-git clone [repository_url]
+git clone https://github.com/kmwandingi/alliander-load-profile-estimation.git
 
 2. Install dependencies:
 pip install -r requirements.txt
 
-3. Unzip the provided dataset files into the `data/` directory.
+3. Unzip the provided dataset files into the `data/processed` directory.
 
 ## Running the Notebooks
 
@@ -39,7 +39,7 @@ A Dockerfile is provided for containerized execution:
 docker build -t alliander-load-profile .
 
 2. Run the container:
-docker run -p 8888:8888 -v $(pwd):/notebooks alliander-load-profile
+docker run -p 8889:8889 -v $(pwd):/notebooks alliander-load-profile
 
 3. Access Jupyter Notebook through the URL provided in the console output.
 
