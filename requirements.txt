@@ -8,7 +8,7 @@ python-dotenv>=0.5.1
 
 pandas==2.2.2
 numpy==1.26.2
-scikit-learn==1.3.0
+scikit-learn==1.5.0
 hiplot==0.1.33
 matplotlib==3.8.0
 torch==2.1.1
