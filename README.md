@@ -12,11 +12,9 @@ This project focuses on load profile estimation using conditional Variational Au
 
 ## Setup
 
-1. Clone this repository:
-git clone https://github.com/kmwandingi/alliander-load-profile-estimation.git
+1. Clone this repository: `git clone https://github.com/kmwandingi/alliander-load-profile-estimation.git`
 
-2. Install dependencies:
-pip install -r requirements.txt
+2. Install dependencies: `pip install -r requirements.txt`
 
 3. Unzip the provided dataset files into the `data/processed` directory.
 
@@ -36,10 +34,10 @@ jupyter notebook
 A Dockerfile is provided for containerized execution:
 
 1. Build the Docker image:
-docker build -t alliander-load-profile .
+`docker build -t alliander-load-profile .`
 
 2. Run the container:
-docker run -p 8889:8889 -v $(pwd):/notebooks alliander-load-profile
+`docker run -p 8889:8889 -v $(pwd):/notebooks alliander-load-profile`
 
 3. Access Jupyter Notebook through the URL provided in the console output.
 
