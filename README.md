@@ -1,44 +1,58 @@
-alliander-load-profile-estimation
-==============================
+# Alliander Load Profile Estimation
 
-alliander-load-profile-estimation
+This project focuses on load profile estimation using various machine learning techniques.
 
-Project Organization
-------------
+## Project Structure
 
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── data
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
+- `models/`: Contains trained models
+- `notebooks/`: Jupyter notebooks for analysis and modeling
+- `references/`: Reference papers and documents
+- `reports/`: Generated figures and draft results report
+- `data/`: Dataset files (provided separately as a zip file)
 
+## Setup
+
+1. Clone this repository:
+git clone [repository_url]
+
+2. Install dependencies:
+pip install -r requirements.txt
+
+3. Unzip the provided dataset files into the `data/` directory.
+
+## Running the Notebooks
+
+1. Start Jupyter Notebook:
+jupyter notebook
+
+2. Navigate to the `notebooks/` directory and open the desired notebook:
+- `0.0-preprocess-features.ipynb`: Data preprocessing
+- `1.0-cvae-v3.ipynb`: Conditional Variational Autoencoder model
+- `1.1-cvae-v3-month-evaluate-reconstruction.ipynb`: CVAE evaluation
+- Other notebooks as listed in the directory
+
+## Docker Support
+
+A Dockerfile is provided for containerized execution:
+
+1. Build the Docker image:
+docker build -t alliander-load-profile .
+
+2. Run the container:
+docker run -p 8888:8888 -v $(pwd):/notebooks alliander-load-profile
+
+3. Access Jupyter Notebook through the URL provided in the console output.
+
+## Data Files
+
+The following data files are some of the used files in this project and can be provided via zip:
+- df_merged_filtered_no_pv_wind.feather
+- df_metered_monthly_500_balanced.feather
+- df_unmetered_monthly_500_balanced.feather
+- updated_combined_reconstructed_denormalised_balanced.csv
+
+Ensure these files are placed in the `data/processed` directory before running the notebooks.
+
+## Additional Information
+
+For more details on the project, methodology, and results, refer to the draft report in the `reports/` directory.
